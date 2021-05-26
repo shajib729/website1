@@ -1,0 +1,99 @@
+section.faq{
+    margin: 100px 0;
+    h1{
+        @include h1;
+        text-align: center;
+    }
+    p.dis{
+        padding: 0 200px;
+        margin-bottom: 100px;
+
+        @media screen and (max-width:992px) {
+            padding: 0 50px;
+            margin-bottom: 50px;
+        }
+
+        @media screen and (max-width:600px) {
+            padding: 0 5px;
+        }
+    }
+    h4{
+        @include h4;
+        font-size: 22px;
+    }
+
+    ul{
+        display: block;
+        margin-top: 60px;
+            // text-align: center;
+
+        li{
+            display: block;
+            list-style: none;
+                width: 90%;
+                margin: auto;
+
+            a{
+                display: block;
+                text-decoration: none;
+                color: black;
+                background: #c8f4ff;
+                position: relative;
+                padding: 6px 10px;
+                border-radius: 5px;
+                font-size: 16px;
+                font-weight: 600;
+                padding-right: 50px;
+                cursor: pointer;
+                box-shadow: 0 4px 5px #0000001f;
+
+                span{
+                    position: absolute;
+                    top: calc(50% - 15px);
+                    right: 0;
+                    height: 30px;
+                    width: 30px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    &:before{
+                        content:"";
+                        position: absolute;
+                        width: 20px;
+                        height: 3px;
+                        background: rgb(36, 36, 36);
+                    }
+                    &:after{
+                        content:"";
+                        position: absolute;
+                        width: 3px;
+                        height: 20px;
+                        background: rgb(36, 36, 36);
+                    }
+                }
+                span.active:after{
+                    transform: rotate(90deg);
+                }
+                
+            }
+
+
+            .faq-ans{
+                padding:0 20px;
+                // background: pink;
+                max-height: 0;
+                overflow: hidden;
+                transition: .4s;
+                background: #ddf8ff;
+                color: black;
+            }
+        
+        }
+        li.active .faq-ans{
+            padding: 20px;
+            max-height: 100vh !important;
+            overflow: auto;
+        }
+    }
+}
